@@ -1,0 +1,214 @@
+<html lang="pt_BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>SUBSTITUIÇÃO</title>
+        <link rel="icon" href="./images/logo-icon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <style>
+            #page-ladding{
+    background:black;
+    min-height:100vh;
+    display:flex;
+    
+}
+#container{
+    margin:auto;
+    text-align: center;
+    
+}
+
+
+
+* {
+    margin:0;
+    padding:0;
+}
+
+:root{
+    font-size: 62.5%;
+}
+
+#body{
+    
+    height:100vh;
+    color:white;
+    
+}
+
+
+ #tabela{
+    margin:left;
+    border:1px solid;
+    font-size: 50px;
+ }
+
+ #titulo{
+    font-size: 80px;
+ }
+#fila{
+    border-color: white;
+    background: black;
+    color:white;
+    width:50%
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: orange;
+
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+
+}
+#primeiras{
+   font-size: 30px;width:50.9%;text-align: center;background: black;color:orange;border-color: black
+}
+#proximas{
+    font-size: 30px;width:47.9%;text-align: center;background: black;color:orange;border-color: black
+}
+.tamanho{
+    width:5%;
+    text-align: center;
+}
+
+        </style>
+    </head>
+
+    <body id="body">
+        <div id="page-ladding">
+            <div id="container">
+                <h1 id="titulo">SUBSTITUIÇÃO DE PÁGINA (FIFO)</h1> <br><br>
+                <main>
+                    <div style="font-size: 30px;">
+                        Digite uma Sequência de Páginas: (Valores permitidos 0,1,2,3,4,5,6,7,8,9) <br>
+                        <input class="tamanho" onkeyup="somenteNumeros(this);" maxlength="1" type="text"  ng-model="numero.valor" id="sequencia">
+                        <input class="tamanho" onkeyup="somenteNumeros(this);" maxlength="1" type="text"  ng-model="numero.valor" id="sequencia2">
+                        <input class="tamanho" onkeyup="somenteNumeros(this);" maxlength="1" type="text"  ng-model="numero.valor" id="sequencia3">
+                        <input class="tamanho" onkeyup="somenteNumeros(this);" maxlength="1" type="text"  ng-model="numero.valor" id="sequencia4">
+                        <input class="tamanho" onkeyup="somenteNumeros(this);" maxlength="1" type="text"  ng-model="numero.valor" id="sequencia5">
+                        <input class="tamanho" onkeyup="somenteNumeros(this);" maxlength="1" type="text"  ng-model="numero.valor" id="sequencia6">
+                        <input class="tamanho" onkeyup="somenteNumeros(this);" maxlength="1" type="text"  ng-model="numero.valor" id="sequencia7">
+                        <input class="tamanho" onkeyup="somenteNumeros(this);" maxlength="1" type="text"  ng-model="numero.valor" id="sequencia8">
+                        <input class="tamanho" onkeyup="somenteNumeros(this);" maxlength="1" type="text"  ng-model="numero.valor" id="sequencia9">
+                        <input class="tamanho" onkeyup="somenteNumeros(this);" maxlength="1" type="text"  ng-model="numero.valor" id="sequencia10">
+
+                        <button style="background: blue;color:white" type="button" onclick="iniciar()" class="inicio" id="iniciar">OK</button><br>      
+                    </div> <br>
+                        <input id="primeiras" name="p1" maxlength="7" type="disabled"value="PÁGINAS" disabled> <br>
+                         
+                        <input style="font-size: 30px;" class="tamanho"name="s"  readonly=“true” id="linha1">
+                        <input style="font-size: 30px;" class="tamanho"name="s"  readonly=“true” id="linha2">
+                        <input style="font-size: 30px;" class="tamanho"name="s"  readonly=“true” id="linha3">
+                        <input style="font-size: 30px;" class="tamanho"name="s"  readonly=“true” id="linha4">
+                        <input style="font-size: 30px;" class="tamanho"name="s"  readonly=“true” id="linha5"> <br>
+
+                        <input id="proximas"  name="pr" maxlength="7" type="disabled" value="FILA" disabled> <br>
+
+                        <input style="font-size: 30px;" class="tamanho"name="s"  readonly=“true” id="linha6" value="">
+                        <input style="font-size: 30px;" class="tamanho"name="s"  readonly=“true” id="linha7">
+                        <input style="font-size: 30px;" class="tamanho"name="s"  readonly=“true” id="linha8">
+                        <input style="font-size: 30px;" class="tamanho"name="s"  readonly=“true” id="linha9">
+                        <input style="font-size: 30px;" class="tamanho"name="s"  readonly=“true” id="linha10"> <br><br>
+                        <button  style="font-size: 30px;background: blue;color:white"type="button" onclick="proximapagina()" class="inicio" id="pp">PRÓXIMA PÁGINA</button><br>
+                </main>
+                <div> 
+                    <input id="primeiras" name="p1"  type="" value="RELATÓRIO DE FALTAS" disabled> <br>
+                    <input style="font-size: 30px;" class="tamanho" name="s"  readonly=“true” id="falta1" value="0">
+                </div>
+            </div>
+        </div>
+    </body> 
+    
+    <script type="text/javascript">
+        function somenteNumeros(num) {
+            var er = /[^0-9.]/;
+            er.lastIndex = 0;
+            var campo = num;
+            if (er.test(campo.value)) {
+              campo.value = "";
+            }
+        }
+        
+        function iniciar() {
+            var paginas = document.getElementById('sequencia').value;
+            document.getElementById('linha1').value = paginas;
+
+            var paginas2 = document.getElementById('sequencia2').value;
+            document.getElementById('linha2').value = paginas2;
+
+            var paginas3 = document.getElementById('sequencia3').value;
+            document.getElementById('linha3').value = paginas3;
+
+            var paginas4 = document.getElementById('sequencia4').value;
+            document.getElementById('linha4').value = paginas4;
+
+            var paginas5 = document.getElementById('sequencia5').value;
+            document.getElementById('linha5').value = paginas5;
+
+            var paginas6 = document.getElementById('sequencia6').value;
+            document.getElementById('linha6').value = paginas6;
+
+            var paginas7 = document.getElementById('sequencia7').value;
+            document.getElementById('linha7').value = paginas7;
+
+            var paginas8 = document.getElementById('sequencia8').value;
+            document.getElementById('linha8').value = paginas8;
+
+            var paginas9 = document.getElementById('sequencia9').value;
+            document.getElementById('linha9').value = paginas9;
+
+            var paginas10 = document.getElementById('sequencia10').value;
+            document.getElementById('linha10').value = paginas10;
+
+            document.getElementById('falta1').value = 5;
+            
+        }
+        
+        function proximapagina() {
+            var relatorio = document.getElementById('falta1').value; 
+            relatorio++;    
+            var paginas = document.getElementById('falta1').value = relatorio;  
+            var results = document.getElementById('falta1').value;   
+            var linha6 = document.getElementById('linha6').value;
+            var linha7 = document.getElementById('linha7').value;
+            var linha8 = document.getElementById('linha8').value;
+            var linha9 = document.getElementById('linha9').value;
+            var linha10 = document.getElementById('linha10').value;
+
+            if(results == 6 ){
+                document.getElementById('linha1').value = linha6;
+            }
+            else if (results == 7){
+                document.getElementById('linha2').value = linha7;
+            }
+                if(results == 8){
+                document.getElementById('linha3').value = linha8;    
+                }
+            else if (results == 9){
+                document.getElementById('linha4').value = linha9;
+            }   
+
+            if(results == 10){
+                document.getElementById('linha5').value = linha10;    
+                } 
+             else if (results == 11){
+                document.location.reload(true);
+            }      
+            
+        }
+    </script>
+</html>
